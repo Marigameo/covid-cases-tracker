@@ -7,7 +7,21 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('../partials/header') %>
     <h3>Home page</h3>
+    <h4>Hello my name is <%= author %></h4>
+    <ul>
+        <% books.forEach(book => { %>
+          <li><%= book.name %> - <%= book.price %></li>
+        <% }); %>
+    </ul>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, beatae magni. Nulla perspiciatis neque aspernatur amet facere maiores, quaerat autem eligendi eos architecto enim iste, illo quidem? Commodi, rem repudiandae.</p>
+    <%- include('../partials/footer') %>
 </body>
+<script>
+    fetch('/api/patients')
+            .then(response => response.json())
+            .then(json => console.log('patients', json))
+        
+</script>
 </html>
